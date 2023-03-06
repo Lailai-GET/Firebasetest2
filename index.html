@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="javascript/model.js"></script>
+    <script src="javascript/view.js"></script>
+    <script src="javascript/controller.js" async></script>
+    <script src="javascript/firebase.js" type="module"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      const main = document.getElementById("app");
+      updateView();
+      import("/javascript/firebase.js")
+        .then((module) => {
+          window.testUpload = module.testUpload;
+        })
+        .catch((error) => console.error(error));
+    </script>
+  </body>
+</html>
