@@ -42,7 +42,9 @@ async function testRead() {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log("Document data:", docSnap.data());
+    model.test=docSnap.data();
+    console.log("docSnap",docSnap.data(), "model", model.test)
+    updateView();
   } else {
     // doc.data() will be undefined in this case
     console.log("No such document!");
