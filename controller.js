@@ -16,11 +16,11 @@
 //   } catch (e) {
 //     console.error("ReadingError: ", e);
 //   }}
-// import('./firebase.js')
-//   .then(module => {
-//     const result = module.testRead();
-//     console.log(result);
-//   })
-//   .catch(error => {
-//     console.error(error);
-//   });
+import('./firebase.js')
+  .then(module => {
+    const result = module.testRead();
+    console.log(result);
+  })
+  .catch(error => {
+    console.error(error);
+  });
