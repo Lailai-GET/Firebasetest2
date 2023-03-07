@@ -16,7 +16,7 @@
 //   } catch (e) {
 //     console.error("ReadingError: ", e);
 //   }}
-import('/javascript/firebase.js')
+import('/firebase.js')
   .then(module => {
     const result = module.testRead();
     console.log(result);
