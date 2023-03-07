@@ -3,7 +3,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase
 import {
   getFirestore,
   collection,
-  getDocs,
+  doc,
+  getDoc,
   addDoc,
   setDoc,
   orderBy,
@@ -24,14 +25,32 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // testUpload();
+// testRead();
 async function testUpload() {
-    try {
-      const docRef = await addDoc(collection(db, "test4"), {
-        calledFrom: "async på scripttag controller"
-      });
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
+  try {
+    const docRef = await addDoc(collection(db, "test8"), {
+      calledFrom: "funker det om jeg har query snapshot?",
+    });
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
   }
-export {testUpload};
+}
+
+async function testRead() {
+  const docRef = doc(db, "test", "highscores");
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    console.log("Document data:", docSnap.data());
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}
+
+async function testSet() {
+  await setDoc(doc(db, "test", "highscores"), model.highscores);
+}
+
+export { testUpload, testRead, testSet };
