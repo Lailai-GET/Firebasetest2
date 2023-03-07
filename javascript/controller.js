@@ -1,12 +1,13 @@
 // testUpload();
 
+
 // model.highscores.scores.push({
 //     testelement: "test",
 //     moreTest: "Testing"
 // })
 
-testSet();
-testRead();
+// testSet();
+// testRead();
 // testAwait();
 // async function testAwait(){
 // try {
@@ -15,3 +16,11 @@ testRead();
 //   } catch (e) {
 //     console.error("ReadingError: ", e);
 //   }}
+import('/javascript/firebase.js')
+  .then(module => {
+    const result = module.testRead();
+    console.log(result);
+  })
+  .catch(error => {
+    console.error(error);
+  });

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="javascript/firebase.js" type="module"></script>
-    <script>import("/javascript/firebase.js")
+    <script src="javascript/firebase.js" type="module" defer></script>
+    <!-- <script>import("/javascript/firebase.js")
       .then((module) => {
         window.testUpload = module.testUpload;
       })
@@ -18,10 +18,10 @@
       .then((module) => {
         window.testSet = module.testSet;
       })
-      .catch((error) => console.error(error));</script>
+      .catch((error) => console.error(error));</script> -->
     <script src="javascript/model.js"></script>
     <script src="javascript/view.js"></script>
-    <script src="javascript/controller.js" defer></script>
+    <script src="javascript/controller.js" ></script>
   </head>
   <body>
     <div id="app"></div>
