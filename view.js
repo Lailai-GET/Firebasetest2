@@ -1,8 +1,8 @@
 function updateView() {
-    import("/firebase.js")
+    import("./firebase.js")
     .then((module) => {
       window.testRead = module.testRead;
     })
     .catch((error) => console.error(error));
-  main.innerHTML = `testing 07.03 16:48, 17:10, 17:56 <button onclick="testRead()">test</button>`;
+  main.innerHTML = `testing 07.03 16:48, 17:10, 17:56, 18:10 <button onclick="testRead()">test</button>`;
 }
