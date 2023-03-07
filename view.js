@@ -1,3 +1,3 @@
 function updateView(){
-    main.innerHTML = "testing";
+    main.innerHTML = "testing 07.03 16:48";
 }
